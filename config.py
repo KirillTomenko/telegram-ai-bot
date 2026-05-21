@@ -80,6 +80,16 @@ API_CONFIG = {
 
 # Настройки модели
 DEFAULT_MODEL = os.getenv('DEFAULT_MODEL', 'gpt-4o-mini')
-DEFAULT_TEMPERATURE = float(os.getenv('DEFAULT_TEMPERATURE', 0.7))
+DEFAULT_TEMPERATURE = float(os.getenv('DEFAULT_TEMPERATURE', 0.1))
 DEFAULT_MAX_TOKENS = int(os.getenv('DEFAULT_MAX_TOKENS', 1000))
 MAX_CONTEXT_MESSAGES = int(os.getenv('MAX_CONTEXT_MESSAGES', 10))
+
+# =============================================================================
+# 👤 Настройки пользователя (хранятся в памяти)
+# =============================================================================
+USER_SETTINGS_DEFAULT = {
+    'temperature': DEFAULT_TEMPERATURE,
+    'max_tokens': DEFAULT_MAX_TOKENS,
+    'mode': 'default',  # 'default', 'анализ', 'код', 'перевод', 'json'
+    'json_output': False
+}
